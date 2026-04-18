@@ -2,58 +2,69 @@ import Reveal from './Reveal.jsx';
 
 export default function Signature() {
   return (
-    <section id="signature" className="relative bg-espresso text-cream overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+    <section id="signature" className="relative bg-rust text-cream overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[90vh]">
         <div className="relative lg:col-span-7 order-2 lg:order-1">
           <img
-            src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=2000&q=80"
-            alt="Tonka Tiramisu"
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=80"
+            alt="Ethiopian coffee ceremony — jebena and cups"
             className="h-[70vh] lg:h-full w-full object-cover"
             loading="lazy"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-rust/30 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-6 left-6 text-[10px] uppercase tracking-widest2 text-cream/70">
-            № 04 — House Signature
+            № 03 — The Signature
           </div>
         </div>
 
         <div className="lg:col-span-5 order-1 lg:order-2 flex items-center">
           <div className="px-6 md:px-14 py-20 lg:py-28 max-w-xl">
             <Reveal>
-              <p className="text-[11px] uppercase tracking-widest2 text-clay mb-6">
-                The Signature
+              <p className="text-[11px] uppercase tracking-widest2 text-gold mb-6">
+                The Buna Ceremony
               </p>
             </Reveal>
             <Reveal delay={100}>
               <h2 className="font-display font-light text-5xl md:text-6xl leading-[1.02]">
-                Tonka <span className="italic">Tiramisu.</span>
+                Injera <span className="italic">Birthday Cake.</span>
               </h2>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-10 text-[15px] leading-[1.8] text-cream/80">
-                Made the long way. Mascarpone whipped by hand, espresso pulled cold, and a whisper of
-                tonka bean folded through. We bake it in the morning, let it rest, and serve it just
-                before it&apos;s too late.
+              <p className="mt-10 text-[15px] leading-[1.8] text-cream/85">
+                A fusion baked for Sunday afternoons and birthdays lived between two
+                homes. Fermented teff layers, cardamom buttercream, honey from the
+                Ethiopian highlands. Your grandmother would approve — and maybe ask
+                for a second slice.
               </p>
             </Reveal>
             <Reveal delay={280}>
               <dl className="mt-12 grid grid-cols-2 gap-y-6 gap-x-10 text-sm">
                 <div>
-                  <dt className="text-[10px] uppercase tracking-widest2 text-clay mb-2">Pairs with</dt>
-                  <dd className="text-cream/90 font-display italic text-lg">Cold drip, 12h</dd>
+                  <dt className="text-[10px] uppercase tracking-widest2 text-gold mb-2">Pairs with</dt>
+                  <dd className="text-cream/90 font-display italic text-lg">Sidamo cold brew</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-widest2 text-clay mb-2">Served</dt>
-                  <dd className="text-cream/90 font-display italic text-lg">After noon, only</dd>
+                  <dt className="text-[10px] uppercase tracking-widest2 text-gold mb-2">Served</dt>
+                  <dd className="text-cream/90 font-display italic text-lg">By the slice, or whole</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-widest2 text-clay mb-2">Rested</dt>
-                  <dd className="text-cream/90 font-display italic text-lg">Eighteen hours</dd>
+                  <dt className="text-[10px] uppercase tracking-widest2 text-gold mb-2">Rested</dt>
+                  <dd className="text-cream/90 font-display italic text-lg">Twenty-four hours</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-widest2 text-clay mb-2">Made</dt>
-                  <dd className="text-cream/90 font-display italic text-lg">By Juhi, daily</dd>
+                  <dt className="text-[10px] uppercase tracking-widest2 text-gold mb-2">Origin</dt>
+                  <dd className="text-cream/90 font-display italic text-lg">Addis &mdash; London</dd>
                 </div>
               </dl>
+            </Reveal>
+            <Reveal delay={340}>
+              <a
+                href="#/shop"
+                className="mt-12 inline-flex items-center gap-3 text-[11px] uppercase tracking-widest2 border-b border-cream/40 pb-1 hover:text-gold hover:border-gold transition-colors duration-500"
+              >
+                Order the cake
+                <span aria-hidden>→</span>
+              </a>
             </Reveal>
           </div>
         </div>
