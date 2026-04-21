@@ -1,5 +1,6 @@
 import Hero from '../components/Hero.jsx';
 import Marquee from '../components/Marquee.jsx';
+import DragCanvas from '../components/DragCanvas.jsx';
 import Featured from '../components/Featured.jsx';
 import MenuPreview from '../components/MenuPreview.jsx';
 import Signature from '../components/Signature.jsx';
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <DragCanvas />
       <Featured />
       <MenuPreview />
       <Signature />
