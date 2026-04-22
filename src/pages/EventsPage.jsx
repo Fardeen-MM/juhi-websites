@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import Reveal from '../components/Reveal.jsx';
-import { EVENTS, PAST_EVENTS, TESTIMONIALS } from '../data/events.js';
+import { EVENTS, PAST_EVENTS, TESTIMONIALS, PARTNERS } from '../data/events.js';
+import { PixelStar, PixelHeart, PixelArrow } from '../components/Pixel.jsx';
 
 const TYPE_FILTERS = ['All', 'Virtual', 'In-Person'];
 const CATEGORY_FILTERS = ['All', 'Food', 'Art', 'Sports & Fitness', 'Business'];
@@ -41,10 +42,10 @@ function CalendarView({ events }) {
   }, [events]);
 
   return (
-    <div className="bg-paper border border-maroon/15 p-5 md:p-8">
+    <div className="bg-paper border-2 border-maroon/30 p-5 md:p-8 pixel-shadow">
       <div className="flex items-baseline justify-between mb-6">
         <p className="font-display text-2xl md:text-3xl text-maroon">May 2026</p>
-        <p className="text-[11px] uppercase tracking-widest2 text-maroon/60">
+        <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/60">
           {Object.keys(eventByDay).length} events
         </p>
       </div>
@@ -52,7 +53,7 @@ function CalendarView({ events }) {
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => (
           <div
             key={d}
-            className="text-[10px] uppercase tracking-widest2 text-maroon/50 pb-2"
+            className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/50 pb-2"
           >
             {d}
           </div>
@@ -63,9 +64,9 @@ function CalendarView({ events }) {
           return (
             <div
               key={c}
-              className={`aspect-square flex flex-col items-center justify-center text-sm border ${
+              className={`aspect-square flex flex-col items-center justify-center text-sm border-2 ${
                 ev
-                  ? 'bg-maroon text-bone border-maroon cursor-pointer'
+                  ? 'bg-maroon text-bone border-maroon'
                   : 'border-maroon/10 text-charcoal/60'
               }`}
             >
@@ -84,7 +85,7 @@ function EventCard({ e, onRsvp, rsvped }) {
   const spotsLeft = e.rsvp.spots - e.rsvp.taken;
   const full = spotsLeft <= 0;
   return (
-    <article className="group bg-paper border border-maroon/15 flex flex-col overflow-hidden">
+    <article className="group bg-paper border-2 border-maroon/20 flex flex-col overflow-hidden">
       <div className="relative aspect-[16/10] overflow-hidden bg-sand">
         <img
           src={e.image}
@@ -92,28 +93,32 @@ function EventCard({ e, onRsvp, rsvped }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[1600ms] ease-soft group-hover:scale-[1.04]"
         />
-        <span className="absolute top-4 left-4 text-[10px] uppercase tracking-widest2 text-bone bg-maroon px-3 py-1.5">
+        <span className="absolute top-4 left-4 font-pixelbold text-[10px] uppercase tracking-widest2 text-bone bg-maroon px-3 py-1.5 pixel-shadow-cream">
           {e.type === 'virtual' ? 'Virtual' : 'In-Person'}
         </span>
-        <div className="absolute bottom-4 left-4 bg-bone text-maroon px-4 py-2 flex items-baseline gap-2">
+        <div className="absolute bottom-4 left-4 bg-bone text-maroon px-4 py-2 flex items-baseline gap-2 pixel-shadow">
           <span className="font-display text-2xl leading-none">{d.day}</span>
-          <span className="text-[10px] uppercase tracking-widest2">{d.month}</span>
+          <span className="font-pixelbold text-[9px] uppercase tracking-widest2">{d.month}</span>
         </div>
       </div>
       <div className="p-6 flex flex-col grow">
-        <p className="text-[10px] uppercase tracking-widest2 text-maroon/60 mb-2">
+        <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60 mb-2">
           {d.full} · {e.time}
         </p>
         <h3 className="font-display text-2xl text-maroon leading-tight">
           {e.icon} {e.title}
         </h3>
-        <p className="mt-2 text-sm text-charcoal/75">{e.location}</p>
+        <p className="mt-2 text-sm text-charcoal/75">
+          <span className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/70">Venue · </span>
+          {e.venue}
+        </p>
+        <p className="text-xs text-charcoal/60">{e.location}</p>
         <p className="mt-4 text-[14px] text-charcoal/85 leading-relaxed grow">{e.blurb}</p>
 
         <div className="mt-5">
-          <div className="flex items-center gap-3 mb-3 text-[11px] uppercase tracking-widest2 text-maroon/70">
-            <span>{full ? 'Full' : `${spotsLeft} / ${e.rsvp.spots} spots`}</span>
-            <span className="flex-1 h-[2px] bg-maroon/10 relative overflow-hidden">
+          <div className="flex items-center gap-3 mb-3 font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/70">
+            <span>{full ? 'Full' : `${spotsLeft} / ${e.rsvp.spots}`}</span>
+            <span className="flex-1 h-[3px] bg-maroon/10 relative overflow-hidden">
               <span
                 className="absolute inset-y-0 left-0 bg-maroon"
                 style={{ width: `${(e.rsvp.taken / e.rsvp.spots) * 100}%` }}
@@ -123,19 +128,15 @@ function EventCard({ e, onRsvp, rsvped }) {
           <button
             onClick={() => onRsvp(e.id)}
             disabled={rsvped}
-            className={`w-full px-5 py-3 text-[11px] uppercase tracking-widest2 transition-colors duration-300 ${
+            className={`w-full px-5 py-3 font-pixelbold text-[11px] uppercase tracking-widest2 transition-colors duration-300 ${
               rsvped
-                ? 'bg-sage/30 text-maroon border border-sage cursor-default'
+                ? 'bg-sage/30 text-maroon border-2 border-sage cursor-default'
                 : full
-                  ? 'border border-maroon text-maroon hover:bg-maroon hover:text-bone'
-                  : 'bg-maroon text-bone hover:bg-rust'
+                  ? 'border-2 border-maroon text-maroon hover:bg-maroon hover:text-bone'
+                  : 'bg-maroon text-bone hover:bg-rust pixel-shadow-cream'
             }`}
           >
-            {rsvped
-              ? 'You\'re in ✓'
-              : full
-                ? 'Join waitlist'
-                : 'RSVP'}
+            {rsvped ? 'You\'re in ✓' : full ? 'Join waitlist' : 'RSVP'}
           </button>
         </div>
       </div>
@@ -159,18 +160,16 @@ export default function EventsPage() {
     });
   }, [type, cat]);
 
-  const onRsvp = (id) => {
-    setRsvped((prev) => new Set(prev).add(id));
-  };
+  const onRsvp = (id) => setRsvped((prev) => new Set(prev).add(id));
 
   return (
     <>
       <PageHeader
         no="03"
-        eyebrow="Events"
+        eyebrow="Events · hosted around town"
         title="We gather."
         italic="Often."
-        subtitle="Supper clubs in the shop, heritage walks through East London, book club on Zoom, watch parties on Discord. RSVP below — some fill fast."
+        subtitle="We don't have a shop yet — so we partner with beloved London spaces. Supper clubs at Dalston Curve Garden, bun ceremonies at The Africa Centre, book club on Zoom. RSVP below."
       />
 
       <section className="bg-bone py-12 md:py-16">
@@ -180,15 +179,15 @@ export default function EventsPage() {
           </div>
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div>
-              <p className="text-[10px] uppercase tracking-widest2 text-maroon/60 mb-3">
-                Filter · Format
+              <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60 mb-3 inline-flex items-center gap-2">
+                <PixelStar size={10} className="text-maroon" /> Filter · Format
               </p>
               <div className="flex flex-wrap gap-2">
                 {TYPE_FILTERS.map((t) => (
                   <button
                     key={t}
                     onClick={() => setType(t)}
-                    className={`px-4 py-2 text-[11px] uppercase tracking-widest2 border transition-colors duration-300 ${
+                    className={`px-4 py-2 font-pixelbold text-[10px] uppercase tracking-widest2 border-2 transition-colors duration-300 ${
                       type === t
                         ? 'bg-maroon text-bone border-maroon'
                         : 'border-maroon/30 text-maroon hover:border-maroon'
@@ -200,15 +199,15 @@ export default function EventsPage() {
               </div>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-widest2 text-maroon/60 mb-3">
-                Filter · Category
+              <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60 mb-3 inline-flex items-center gap-2">
+                <PixelStar size={10} className="text-maroon" /> Filter · Category
               </p>
               <div className="flex flex-wrap gap-2">
                 {CATEGORY_FILTERS.map((c) => (
                   <button
                     key={c}
                     onClick={() => setCat(c)}
-                    className={`px-4 py-2 text-[11px] uppercase tracking-widest2 border transition-colors duration-300 ${
+                    className={`px-4 py-2 font-pixelbold text-[10px] uppercase tracking-widest2 border-2 transition-colors duration-300 ${
                       cat === c
                         ? 'bg-maroon text-bone border-maroon'
                         : 'border-maroon/30 text-maroon hover:border-maroon'
@@ -219,13 +218,12 @@ export default function EventsPage() {
                 ))}
               </div>
             </div>
-            <div className="bg-paper border border-maroon/15 p-5 mt-auto">
-              <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-2">
-                Recurring
+            <div className="bg-paper border-2 border-maroon/20 p-5 mt-auto pixel-shadow">
+              <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60 mb-2 inline-flex items-center gap-2">
+                <PixelHeart size={10} className="text-maroon animate-sparkle" /> Recurring
               </p>
               <p className="font-display text-xl text-maroon leading-tight">
-                Every 2nd Saturday — Ingredient Spotlight cook-along. Check back the
-                week before.
+                Every 2nd Saturday — Ingredient cook-along. Check back the week before.
               </p>
             </div>
           </div>
@@ -236,8 +234,8 @@ export default function EventsPage() {
         <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
           <div className="flex items-end justify-between mb-10 md:mb-14">
             <Reveal>
-              <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-3">
-                Upcoming — {filtered.length}
+              <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/60 mb-3 inline-flex items-center gap-2">
+                <PixelStar size={10} className="text-maroon animate-sparkle" /> Upcoming — {filtered.length}
               </p>
               <h2 className="font-display font-light text-3xl md:text-5xl text-maroon leading-tight">
                 What&apos;s <span className="italic">next.</span>
@@ -259,6 +257,39 @@ export default function EventsPage() {
         </div>
       </section>
 
+      <section className="bg-bone py-20 md:py-28">
+        <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <Reveal>
+              <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/60 mb-3 inline-flex items-center gap-2">
+                <PixelHeart size={10} className="text-maroon" /> Partner venues
+              </p>
+              <h2 className="font-display font-light text-3xl md:text-5xl text-maroon leading-tight max-w-[20ch]">
+                The spaces that <span className="italic">hold us.</span>
+              </h2>
+            </Reveal>
+          </div>
+          <p className="max-w-xl text-[15px] text-charcoal/85 leading-relaxed mb-10">
+            Until we have our own four walls, these are the kitchens, gardens,
+            and studios that open their doors. Some partner with us seasonally,
+            some on every date.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {PARTNERS.map((p) => (
+              <div
+                key={p.name}
+                className="bg-paper border-2 border-maroon/20 p-5 flex flex-col gap-1 pixel-shadow"
+              >
+                <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60">
+                  {p.area}
+                </p>
+                <p className="font-display text-lg text-maroon leading-tight">{p.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-rust text-cream py-20 md:py-28">
         <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -268,7 +299,7 @@ export default function EventsPage() {
                   <blockquote className="font-display text-xl md:text-2xl italic leading-snug">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
-                  <figcaption className="mt-6 text-[11px] uppercase tracking-widest2 text-gold">
+                  <figcaption className="mt-6 font-pixelbold text-[9px] uppercase tracking-widest2 text-gold">
                     {t.by}
                   </figcaption>
                 </figure>
@@ -282,8 +313,8 @@ export default function EventsPage() {
         <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
           <div className="flex items-end justify-between mb-12">
             <Reveal>
-              <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-3">
-                Past Events · the receipts
+              <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/60 mb-3 inline-flex items-center gap-2">
+                <PixelStar size={10} className="text-maroon" /> Past Events · the receipts
               </p>
               <h2 className="font-display font-light text-3xl md:text-5xl text-maroon leading-tight">
                 What we&apos;ve <span className="italic">already cooked.</span>
@@ -296,7 +327,7 @@ export default function EventsPage() {
               <Reveal key={e.id}>
                 <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-t border-maroon/15 pt-10">
                   <div className="lg:col-span-4">
-                    <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-3">
+                    <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/60 mb-3">
                       {new Date(e.date).toLocaleDateString('en-GB', {
                         day: 'numeric',
                         month: 'long',
@@ -307,7 +338,7 @@ export default function EventsPage() {
                     <blockquote className="mt-6 font-display italic text-xl text-charcoal/90 leading-snug">
                       &ldquo;{e.quote}&rdquo;
                     </blockquote>
-                    <p className="mt-3 text-[11px] uppercase tracking-widest2 text-maroon/70">
+                    <p className="mt-3 font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/70">
                       — {e.quoteBy}
                     </p>
                   </div>
@@ -329,6 +360,14 @@ export default function EventsPage() {
                 </article>
               </Reveal>
             ))}
+          </div>
+          <div className="mt-16 text-center">
+            <a
+              href="mailto:gatherings@nomadhouse.co"
+              className="inline-flex items-center gap-3 font-pixelbold text-[11px] uppercase tracking-widest2 text-bone bg-maroon px-6 py-3 pixel-shadow-cream hover:bg-rust transition-colors"
+            >
+              Host us at your space <PixelArrow size={14} />
+            </a>
           </div>
         </div>
       </section>

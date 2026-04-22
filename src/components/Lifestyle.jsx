@@ -1,4 +1,5 @@
 import Reveal from './Reveal.jsx';
+import { PixelStar } from './Pixel.jsx';
 
 const SHOTS = [
   {
@@ -29,16 +30,19 @@ export default function Lifestyle() {
       <div className="px-6 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 mb-16 md:mb-24">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-4">The House — 07</p>
+            <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/70 mb-4 inline-flex items-center gap-2">
+              <PixelStar size={10} className="text-maroon animate-sparkle" /> The House — 07
+            </p>
             <h2 className="font-display font-light text-4xl md:text-6xl text-maroon max-w-[18ch] leading-[1.05]">
-              A room for <span className="italic">slow afternoons,</span> loud
+              Pickup days, <span className="italic">borrowed tables,</span> loud
               laughter, and second cups.
             </h2>
           </Reveal>
           <Reveal delay={150} className="max-w-sm">
             <p className="text-sm text-charcoal leading-relaxed">
-              Warm light, long tables, a jebena on every surface. Open daily.
-              The community&apos;s kitchen, your second home.
+              We don&apos;t have our own four walls yet — just a kitchen, a bike,
+              and friends who open their rooms. Snaps from pickup days,
+              supper clubs, and the Saturday table at Ridley Road.
             </p>
           </Reveal>
         </div>

@@ -1,16 +1,16 @@
 export const POSTS = [
   {
-    id: 'berbere-origins',
+    id: 'hooyo-xalwo',
     series: 'Ingredient Spotlight Saturdays',
-    title: 'Berbere: the spice that carries a country',
+    title: 'Xalwo: the sweet that travels in every Somali suitcase',
     excerpt:
-      'From the highlands of Tigray to every diaspora pantry in London — the origin story of Ethiopia\'s signature blend.',
-    author: 'Ruhama Y.',
+      'From the Mogadishu fireside to every diaspora kitchen — the origin story of the Somali halwa we pack into every Hooyo Box.',
+    author: 'Ayan H.',
     date: '2026-04-12',
-    readTime: '6 min read',
+    readTime: '7 min read',
     category: 'Ingredient',
     image:
-      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1568051243851-f9b136146e97?auto=format&fit=crop&w=1600&q=80',
     featured: true,
   },
   {
@@ -27,25 +27,25 @@ export const POSTS = [
       'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=80',
   },
   {
-    id: 'teff-notes',
+    id: 'canjeero-notes',
     series: 'Ingredient Spotlight Saturdays',
-    title: 'Teff: the tiny grain with the longest memory',
+    title: 'Canjeero: the morning bread of the Horn',
     excerpt:
-      'A field note on teff\'s ancient domestication, why it matters to gluten-free baking, and our sourcing story.',
+      'Fermentation times, sorghum sources, and why it gets better the second day.',
     author: 'Nomad House Kitchen',
     date: '2026-04-05',
     readTime: '5 min read',
     category: 'Ingredient',
     image:
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=1600&q=80',
   },
   {
     id: 'cardamom-origins',
     series: 'Ingredient Spotlight Saturdays',
     title: 'Cardamom: the memory green',
     excerpt:
-      'Trade routes, tea cups, and why our grandmothers always had a pod tucked in their handbag.',
-    author: 'Ruhama Y.',
+      'Trade routes, tea cups, and why our hooyos always had a pod tucked in their handbag.',
+    author: 'Ayan H.',
     date: '2026-03-29',
     readTime: '7 min read',
     category: 'Ingredient',
@@ -53,9 +53,9 @@ export const POSTS = [
       'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=1600&q=80',
   },
   {
-    id: 'buna-ceremony-guide',
+    id: 'bun-ceremony-guide',
     series: 'The House Guide',
-    title: 'A short guide to hosting a buna ceremony at home',
+    title: 'A short guide to hosting a bun ceremony at home',
     excerpt:
       'What you need, what you don\'t, and why the third round is always the sweetest.',
     author: 'Nomad House Kitchen',
@@ -85,9 +85,9 @@ export const POLLS = [
     id: 'next-feature',
     question: 'Which recipe should we feature next?',
     options: [
-      { label: 'Somali anjeero', votes: 142 },
+      { label: 'Somali bariis iskukaris', votes: 182 },
       { label: 'Eritrean himbasha', votes: 98 },
-      { label: 'Kenyan mandazi', votes: 167 },
+      { label: 'Kenyan mandazi', votes: 117 },
       { label: 'Tanzanian mkate wa ufuta', votes: 73 },
     ],
   },

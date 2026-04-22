@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { POSTS, POLLS } from '../data/journal.js';
+import { PixelStar, PixelHeart, PixelArrow } from '../components/Pixel.jsx';
 
 const SERIES = ['All', 'Ingredient Spotlight Saturdays', 'My Diaspora Story', 'The House Guide'];
 
@@ -45,9 +46,9 @@ export default function JournalPage() {
             <button
               key={s}
               onClick={() => setSeries(s)}
-              className={`px-5 py-2.5 text-[11px] uppercase tracking-widest2 border transition-colors duration-300 ${
+              className={`px-5 py-2.5 font-pixelbold text-[10px] uppercase tracking-widest2 border-2 transition-colors duration-300 ${
                 series === s
-                  ? 'bg-maroon text-bone border-maroon'
+                  ? 'bg-maroon text-bone border-maroon pixel-shadow-cream'
                   : 'border-maroon/30 text-maroon hover:border-maroon'
               }`}
             >
@@ -70,7 +71,7 @@ export default function JournalPage() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[1600ms] ease-soft group-hover:scale-[1.03]"
                     />
-                    <span className="absolute top-5 left-5 text-[10px] uppercase tracking-widest2 text-bone bg-maroon px-3 py-1.5">
+                    <span className="absolute top-5 left-5 font-pixelbold text-[9px] uppercase tracking-widest2 text-bone bg-maroon px-3 py-1.5 pixel-shadow-cream">
                       Featured · {featured.series}
                     </span>
                   </div>
@@ -109,10 +110,9 @@ export default function JournalPage() {
 
                   <a
                     href="#/journal"
-                    className="mt-8 inline-flex items-center gap-3 text-[11px] uppercase tracking-widest2 text-maroon border-b border-maroon pb-1"
+                    className="mt-8 inline-flex items-center gap-3 font-pixelbold text-[11px] uppercase tracking-widest2 text-bone bg-maroon px-6 py-3 pixel-shadow-cream hover:bg-rust transition-colors"
                   >
-                    Read the piece
-                    <span aria-hidden>→</span>
+                    Read the piece <PixelArrow size={14} />
                   </a>
                 </div>
               </article>
@@ -230,9 +230,9 @@ export default function JournalPage() {
                   />
                   <button
                     type="button"
-                    className="w-full mt-2 px-5 py-3 text-[11px] uppercase tracking-widest2 border border-maroon text-maroon hover:bg-maroon hover:text-bone transition-colors duration-300"
+                    className="w-full mt-2 px-5 py-3 font-pixelbold text-[11px] uppercase tracking-widest2 border-2 border-maroon text-maroon hover:bg-maroon hover:text-bone transition-colors duration-300 inline-flex items-center justify-center gap-2"
                   >
-                    Attach recipe & send
+                    Attach recipe & send <PixelArrow size={12} />
                   </button>
                 </form>
               </div>
@@ -254,7 +254,7 @@ export default function JournalPage() {
                   placeholder="email@diaspora.home"
                   className="w-full mt-5 bg-transparent border-b border-cream/30 py-2 text-cream placeholder:text-cream/40 focus:outline-none focus:border-gold"
                 />
-                <button className="w-full mt-4 px-5 py-3 text-[11px] uppercase tracking-widest2 bg-bone text-maroon hover:bg-gold hover:text-rust transition-colors duration-300">
+                <button className="w-full mt-4 px-5 py-3 font-pixelbold text-[11px] uppercase tracking-widest2 bg-bone text-maroon hover:bg-gold hover:text-rust transition-colors duration-300 pixel-shadow-cream">
                   Subscribe
                 </button>
               </div>

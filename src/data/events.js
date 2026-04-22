@@ -1,16 +1,17 @@
 export const EVENTS = [
   {
-    id: 'buna-ceremony-apr',
-    title: 'Buna Ceremony & Storytelling',
+    id: 'bun-ceremony-apr',
+    title: 'Bun Ceremony & Storytelling',
     date: '2026-04-26',
     time: '15:00 — 18:00',
     type: 'in-person',
     category: 'Food',
     icon: '☕',
-    location: 'Nomad House · Dalston, London',
+    venue: 'The Africa Centre · Southwark',
+    location: 'London SE1 · partner venue',
     blurb:
-      'A full Ethiopian coffee ceremony — three rounds, frankincense smoke, and a storytelling circle.',
-    rsvp: { spots: 18, taken: 14 },
+      'A full East African coffee ceremony hosted in The Africa Centre — three rounds, frankincense smoke, and a storytelling circle.',
+    rsvp: { spots: 30, taken: 22 },
     image:
       'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80',
   },
@@ -22,52 +23,56 @@ export const EVENTS = [
     type: 'virtual',
     category: 'Art',
     icon: '🎨',
-    location: 'Zoom · link on RSVP',
+    venue: 'Zoom · link on RSVP',
+    location: 'Online',
     blurb:
-      'Draw and paint along while we walk through Mogadishu\'s modernist era and Ethiopian cinema posters.',
+      'Draw and paint along as we walk through Mogadishu\'s modernist era and Ethiopian cinema posters.',
     rsvp: { spots: 60, taken: 41 },
     image:
       'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1600&q=80',
   },
   {
     id: 'heritage-walk-may',
-    title: 'Heritage Walk · Whitechapel to Bethnal Green',
+    title: 'Heritage Walk · Whitechapel to Shepherd\'s Bush',
     date: '2026-05-10',
     time: '11:00 — 13:30',
     type: 'in-person',
     category: 'Sports & Fitness',
     icon: '🚶‍♀️',
-    location: 'Meet at Whitechapel Station',
+    venue: 'Meet at Whitechapel Station',
+    location: 'East London',
     blurb:
-      'A guided walk through East London\'s Somali, Ethiopian and Eritrean neighbourhoods. Tea at the end.',
+      'A guided walk through East London\'s Somali, Ethiopian and Eritrean neighbourhoods. Shaah at the end.',
     rsvp: { spots: 25, taken: 19 },
     image:
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80',
   },
   {
     id: 'book-club-may',
-    title: 'Book Club · Nuruddin Farah',
+    title: 'Book Club · Nadifa Mohamed',
     date: '2026-05-17',
     time: '18:00 — 19:30',
     type: 'virtual',
     category: 'Art',
     icon: '📖',
-    location: 'Discord · #book-club',
+    venue: 'Discord · #book-club',
+    location: 'Online',
     blurb:
-      'Monthly meet-up discussing "Maps" by Nuruddin Farah. New readers welcome — extracts shared in advance.',
+      'Monthly meet-up discussing "The Fortune Men" by Nadifa Mohamed. New readers welcome — extracts shared in advance.',
     rsvp: { spots: 80, taken: 33 },
     image:
       'https://images.unsplash.com/photo-1524578271613-d550eacf6090?auto=format&fit=crop&w=1600&q=80',
   },
   {
     id: 'cooking-may',
-    title: 'Cook-along: Sambusa Folding Clinic',
+    title: 'Cook-along: Sambuus Folding Clinic',
     date: '2026-05-24',
     time: '16:00 — 17:30',
     type: 'virtual',
     category: 'Food',
     icon: '🍳',
-    location: 'Zoom · ingredients list on RSVP',
+    venue: 'Zoom · ingredients list on RSVP',
+    location: 'Online',
     blurb:
       'Roll, fold, and fry. A live clinic with chef Halima on getting the corners exactly right.',
     rsvp: { spots: 50, taken: 50 },
@@ -76,16 +81,17 @@ export const EVENTS = [
   },
   {
     id: 'supper-club-jun',
-    title: 'Supper Club with Chef Yohannes',
+    title: 'Supper Club: A Somali Table',
     date: '2026-06-06',
     time: '19:30 — 22:30',
     type: 'in-person',
     category: 'Food',
     icon: '🍽️',
-    location: 'Nomad House · Dalston, London',
+    venue: 'Dalston Curve Garden',
+    location: 'Dalston · partner venue',
     blurb:
-      'A six-course pop-up journey across the Horn. Paired with natural wines and kompot.',
-    rsvp: { spots: 22, taken: 7 },
+      'A six-course pop-up dinner led by chef Ayan. Somali-first, with drinks paired from diaspora makers.',
+    rsvp: { spots: 30, taken: 11 },
     image:
       'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80',
   },
@@ -97,10 +103,11 @@ export const EVENTS = [
     type: 'in-person',
     category: 'Business',
     icon: '👯‍♀️',
-    location: 'Nomad House · Dalston, London',
+    venue: 'Rich Mix · Bethnal Green',
+    location: 'East London · partner venue',
     blurb:
       'A quiet space held for diaspora daughters to share, listen, and sit with what needs naming.',
-    rsvp: { spots: 14, taken: 9 },
+    rsvp: { spots: 20, taken: 14 },
     image:
       'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=80',
   },
@@ -112,8 +119,9 @@ export const EVENTS = [
     type: 'in-person',
     category: 'Sports & Fitness',
     icon: '⚽',
-    location: 'London Fields Pitch 2',
-    blurb: 'Casual 7-a-side. All levels welcome. Jollof & buna waiting at Nomad House after.',
+    venue: 'London Fields Pitch 2',
+    location: 'Hackney',
+    blurb: 'Casual 7-a-side. All levels welcome. Bariis and bun waiting after.',
     rsvp: { spots: 30, taken: 12 },
     image:
       'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80',
@@ -123,7 +131,7 @@ export const EVENTS = [
 export const PAST_EVENTS = [
   {
     id: 'meskel-launch',
-    title: 'Meskel Launch Night',
+    title: 'Launch Night · Peckham Levels',
     date: '2026-03-01',
     photos: [
       'https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=1200&q=80',
@@ -135,7 +143,7 @@ export const PAST_EVENTS = [
   },
   {
     id: 'ramadan-iftar',
-    title: 'Community Iftar',
+    title: 'Community Iftar · Ridley Road Market',
     date: '2026-03-22',
     photos: [
       'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80',
@@ -160,4 +168,13 @@ export const TESTIMONIALS = [
     quote: 'It\'s rare to find a space that is both specific and welcoming. This is both.',
     by: 'Thomas · Culturally curious',
   },
+];
+
+export const PARTNERS = [
+  { name: 'Dalston Curve Garden', area: 'Hackney' },
+  { name: 'The Africa Centre', area: 'Southwark' },
+  { name: 'Rich Mix', area: 'Bethnal Green' },
+  { name: 'Peckham Levels', area: 'South London' },
+  { name: 'Ridley Road Market', area: 'Dalston' },
+  { name: 'Kindred Studios', area: 'Queen\'s Park' },
 ];

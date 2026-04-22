@@ -1,61 +1,71 @@
 import Reveal from './Reveal.jsx';
+import { PixelStar, PixelArrow, PixelDivider } from './Pixel.jsx';
 
 const CATEGORIES = [
   {
-    title: 'Buna · Coffee',
+    title: 'Qaxwah & Shaah',
+    origin: 'Somalia + East Africa',
     items: [
+      ['Shaah Cadays', '4.50'],
+      ['Somali Iced Bun', '5.50'],
       ['Yirgacheffe · V60', '5'],
-      ['Sidamo Cold Brew', '5.5'],
-      ['Harar Espresso', '4.5'],
-      ['Spiced Buna Latte', '5.5'],
-      ['Cardamom Cortado', '5'],
-    ],
-  },
-  {
-    title: 'Heirloom Desserts',
-    items: [
-      ['Cardamom Mandazi', '2.80'],
-      ['Somali Halwa', '9'],
-      ['Kashata Kenya', '6'],
-      ['Injera Cake (slice)', '7'],
-      ['Date & Tahini Basbousa', '6.50'],
-    ],
-  },
-  {
-    title: 'Pastry & Bread',
-    items: [
-      ['Himbasha Flatbread', '4'],
-      ['Sambusa · lentil', '3.50'],
-      ['Berbere Shortbread', '4'],
-      ['Injera, fresh', '3.50'],
-      ['Coconut Kaimati', '3'],
-    ],
-  },
-  {
-    title: 'Tea & Herbs',
-    items: [
-      ['Shaah Hawaash', '4.50'],
-      ['Ethiopian Herbal Blend', '4.50'],
-      ['Spiced Chai', '4'],
+      ['Kenya AA Cold Brew', '5.50'],
+      ['Rwanda Espresso Tonic', '6'],
       ['Hibiscus Karkade', '4'],
     ],
   },
   {
-    title: 'Gift Boxes',
+    title: 'Xalwo & Sweets',
+    origin: 'Somali heritage',
     items: [
+      ['Xalwo Caano · milk', '9'],
+      ['Xalwo Cambe · mango', '11'],
+      ['Malawax rolls', '4'],
+      ['Cambuulo bowl', '6'],
+      ['Kashata · Tanzania', '6'],
+      ['Mandazi · Kenya', '2.80'],
+      ['Date & tahini basbousa', '6.50'],
+    ],
+  },
+  {
+    title: 'Canjeero & Bread',
+    origin: 'Somalia + East Africa',
+    items: [
+      ['Canjeero stack', '5'],
+      ['Muufo · corn flatbread', '3'],
+      ['Sambuus · lentil', '3.50'],
+      ['Himbasha · Eritrea', '8'],
+      ['Ugandan chapati', '2'],
+    ],
+  },
+  {
+    title: 'Gift Boxes',
+    origin: 'Made to order',
+    items: [
+      ['Hooyo Box · Somali heritage', '48'],
       ['Home Box · three origins', '42'],
-      ['Ceremony Set · jebena + beans', '68'],
-      ['Sweet Diaspora · dessert flight', '38'],
-      ['Festival Box · Meskel edition', '55'],
+      ['Bun Ceremony Set · jebena + beans', '68'],
+      ['Sweet Diaspora flight', '38'],
     ],
   },
   {
     title: 'House Merch',
+    origin: 'From our kitchen',
     items: [
-      ['Ceramic Finjan (x2)', '24'],
-      ['Linen Coffee Apron', '38'],
-      ['Nomad House Tote', '18'],
-      ['Recipe Card Set', '14'],
+      ['Ceramic finjan (x2)', '24'],
+      ['Linen house apron', '38'],
+      ['Nomad House tote', '18'],
+      ['Recipe card set', '14'],
+    ],
+  },
+  {
+    title: 'Catering',
+    origin: 'For your events',
+    items: [
+      ['Ramadan iftar trays · from', '120'],
+      ['Supper club menu · pp from', '45'],
+      ['Bun ceremony service · pp', '18'],
+      ['Dessert platter · feeds 10', '75'],
     ],
   },
 ];
@@ -66,15 +76,17 @@ export default function MenuPreview() {
       <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 md:mb-24">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest2 text-maroon/60 mb-4">The House — 02</p>
+            <p className="font-pixelbold text-[10px] uppercase tracking-widest2 text-maroon/70 mb-4 inline-flex items-center gap-2">
+              <PixelStar size={10} className="text-maroon animate-sparkle" /> The House — 02
+            </p>
             <h2 className="font-display font-light text-4xl md:text-6xl text-maroon max-w-[16ch] leading-[1.05]">
               A short list, <span className="italic">made carefully.</span>
             </h2>
           </Reveal>
           <Reveal delay={120} className="max-w-sm">
             <p className="text-sm text-charcoal leading-relaxed">
-              Recipes passed down, then re-read. Coffee sourced from farms across the
-              Horn, desserts baked slowly by hand. A preview of what we serve.
+              Somali heritage leading, with beans, breads, and sweets from across
+              the region. Order online, pickup in E8 or delivered across London.
             </p>
           </Reveal>
         </div>
@@ -83,12 +95,15 @@ export default function MenuPreview() {
           {CATEGORIES.map((cat, i) => (
             <Reveal key={cat.title} delay={i * 80}>
               <div className="border-t border-maroon/25 pt-6">
-                <div className="flex items-baseline justify-between mb-6">
+                <div className="flex items-baseline justify-between mb-2">
                   <h3 className="font-display text-2xl md:text-3xl text-maroon">{cat.title}</h3>
-                  <span className="text-[10px] uppercase tracking-widest2 text-maroon/60">
-                    {String(i + 1).padStart(2, '0')}
+                  <span className="font-pixel text-[14px] uppercase tracking-widest2 text-maroon/60">
+                    № {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
+                <p className="font-pixelbold text-[9px] uppercase tracking-widest2 text-maroon/50 mb-5">
+                  {cat.origin}
+                </p>
                 <ul className="space-y-4">
                   {cat.items.map(([name, price]) => (
                     <li key={name} className="flex items-baseline gap-4 group">
@@ -105,14 +120,15 @@ export default function MenuPreview() {
           ))}
         </div>
 
+        <PixelDivider className="mt-20" />
+
         <Reveal delay={200}>
-          <div className="mt-20 text-center">
+          <div className="text-center">
             <a
               href="#/shop"
-              className="inline-flex items-center gap-3 text-[11px] uppercase tracking-widest2 text-maroon border-b border-maroon pb-1"
+              className="inline-flex items-center gap-3 font-pixelbold text-[11px] uppercase tracking-widest2 text-bone bg-maroon px-6 py-3 pixel-shadow-cream hover:bg-rust transition-colors"
             >
-              See the full shop
-              <span aria-hidden>→</span>
+              See the full shop <PixelArrow size={14} />
             </a>
           </div>
         </Reveal>

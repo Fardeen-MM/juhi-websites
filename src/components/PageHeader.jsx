@@ -1,19 +1,21 @@
 import Reveal from './Reveal.jsx';
+import { PixelStar } from './Pixel.jsx';
 
 export default function PageHeader({ eyebrow, title, italic, subtitle, no }) {
   return (
     <section className="relative pt-36 md:pt-44 pb-16 md:pb-24 bg-bone overflow-hidden">
       <div className="absolute inset-0 bg-grain-texture opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 crt-scan opacity-30 pointer-events-none" />
       <div className="relative px-6 md:px-10 max-w-[1400px] mx-auto">
         <div className="flex items-start justify-between gap-8">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest3 text-maroon/60 mb-5">
-              {eyebrow}
+            <p className="font-pixelbold text-[10px] uppercase tracking-widest3 text-maroon/70 mb-5 inline-flex items-center gap-2">
+              <PixelStar size={10} className="text-maroon animate-sparkle" /> {eyebrow}
             </p>
           </Reveal>
           {no && (
             <Reveal>
-              <p className="font-mono text-[11px] uppercase tracking-widest2 text-maroon/50">
+              <p className="font-pixelbold text-[11px] uppercase tracking-widest2 text-maroon/50">
                 № {no}
               </p>
             </Reveal>
