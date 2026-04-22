@@ -29,7 +29,7 @@ export default function Lifestyle() {
       <div className="px-6 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 mb-16 md:mb-24">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest2 text-ash mb-4">The House — 05</p>
+            <p className="text-[11px] uppercase tracking-widest2 text-terracotta mb-4">The House — 05</p>
             <h2 className="font-display font-light text-4xl md:text-6xl text-espresso max-w-[18ch] leading-[1.05]">
               A room for <span className="italic">slow afternoons,</span> quiet conversation, and
               second cups.

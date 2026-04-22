@@ -26,6 +26,7 @@ src/
     Hero.jsx           # fullscreen cinematic
     Featured.jsx       # horizontal drag / scroll
     MenuPreview.jsx    # clean grid
+    Community.jsx      # regulars, voices, gatherings
     Signature.jsx      # large image + description
     Lifestyle.jsx      # interior / textures / people
     Footer.jsx         # location, hours, instagram

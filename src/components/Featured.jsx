@@ -48,7 +48,7 @@ export default function Featured() {
     <section className="relative py-28 md:py-36 bg-cream">
       <div className="px-6 md:px-10 flex items-end justify-between mb-14 md:mb-20">
         <Reveal>
-          <p className="text-[11px] uppercase tracking-widest2 text-ash mb-4">Featured — 01</p>
+          <p className="text-[11px] uppercase tracking-widest2 text-terracotta mb-4">Featured — 01</p>
           <h2 className="font-display font-light text-4xl md:text-6xl text-espresso max-w-[14ch] leading-[1.05]">
             A handful of things <span className="italic">we love right now.</span>
           </h2>

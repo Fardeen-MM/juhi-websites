@@ -63,7 +63,7 @@ export default function MenuPreview() {
       <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
         <div className="flex items-end justify-between mb-16 md:mb-24">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest2 text-ash mb-4">The Menu — 02</p>
+            <p className="text-[11px] uppercase tracking-widest2 text-terracotta mb-4">The Menu — 02</p>
             <h2 className="font-display font-light text-4xl md:text-6xl text-espresso max-w-[16ch] leading-[1.05]">
               A short list, <span className="italic">made carefully.</span>
             </h2>

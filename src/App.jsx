@@ -2,6 +2,7 @@ import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import Featured from './components/Featured.jsx';
 import MenuPreview from './components/MenuPreview.jsx';
+import Community from './components/Community.jsx';
 import Signature from './components/Signature.jsx';
 import Lifestyle from './components/Lifestyle.jsx';
 import Footer from './components/Footer.jsx';
@@ -13,6 +14,7 @@ export default function App() {
       <Hero />
       <Featured />
       <MenuPreview />
+      <Community />
       <Signature />
       <Lifestyle />
       <Footer />

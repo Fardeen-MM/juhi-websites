@@ -1,6 +1,7 @@
 export default function Nav() {
   const links = [
     { label: 'Menu', href: '#menu' },
+    { label: 'Community', href: '#community' },
     { label: 'Signature', href: '#signature' },
     { label: 'House', href: '#lifestyle' },
     { label: 'Visit', href: '#visit' },
