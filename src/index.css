@@ -7,15 +7,20 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16' shape-rendering='crispEdges'><g fill='%237d2411'><rect x='1' y='1' width='1' height='1'/><rect x='1' y='2' width='2' height='1'/><rect x='1' y='3' width='3' height='1'/><rect x='1' y='4' width='4' height='1'/><rect x='1' y='5' width='5' height='1'/><rect x='1' y='6' width='6' height='1'/><rect x='1' y='7' width='7' height='1'/><rect x='1' y='8' width='8' height='1'/><rect x='1' y='9' width='9' height='1'/><rect x='1' y='10' width='10' height='1'/><rect x='1' y='11' width='5' height='1'/><rect x='1' y='12' width='2' height='1'/><rect x='6' y='11' width='2' height='1'/><rect x='7' y='12' width='2' height='1'/><rect x='8' y='13' width='2' height='1'/><rect x='9' y='14' width='2' height='1'/></g><g fill='%23ffffff'><rect x='2' y='2' width='1' height='1'/><rect x='2' y='3' width='2' height='1'/><rect x='2' y='4' width='3' height='1'/><rect x='2' y='5' width='4' height='1'/><rect x='2' y='6' width='5' height='1'/><rect x='2' y='7' width='6' height='1'/><rect x='2' y='8' width='7' height='1'/><rect x='2' y='9' width='8' height='1'/><rect x='2' y='10' width='3' height='1'/><rect x='2' y='11' width='2' height='1'/></g></svg>") 1 1, auto;
+  }
+
+  a, button, [role='button'], .cursor-pointer, input[type='submit'] {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16' shape-rendering='crispEdges'><g fill='%237d2411'><rect x='6' y='1' width='3' height='1'/><rect x='5' y='2' width='1' height='3'/><rect x='9' y='2' width='1' height='3'/><rect x='4' y='4' width='1' height='2'/><rect x='10' y='4' width='1' height='4'/><rect x='3' y='5' width='1' height='2'/><rect x='5' y='6' width='1' height='1'/><rect x='2' y='6' width='1' height='2'/><rect x='1' y='7' width='1' height='4'/><rect x='11' y='8' width='1' height='3'/><rect x='10' y='10' width='1' height='3'/><rect x='2' y='11' width='1' height='2'/><rect x='3' y='12' width='1' height='2'/><rect x='4' y='13' width='6' height='1'/></g><g fill='%23ffffff'><rect x='6' y='2' width='3' height='1'/><rect x='6' y='3' width='3' height='1'/><rect x='6' y='4' width='3' height='1'/><rect x='5' y='5' width='5' height='1'/><rect x='4' y='6' width='1' height='1'/><rect x='6' y='7' width='4' height='1'/><rect x='3' y='7' width='1' height='4'/><rect x='4' y='7' width='2' height='6'/><rect x='6' y='8' width='4' height='5'/></g></svg>") 8 1, pointer;
   }
 
   body {
-    @apply bg-bone text-espresso font-sans;
+    @apply bg-bone text-ink font-sans;
     font-feature-settings: 'ss01', 'ss02';
   }
 
   ::selection {
-    @apply bg-clay/50 text-espresso;
+    @apply bg-maroon text-bone;
   }
 }
 
@@ -39,7 +44,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.06;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
   }
@@ -49,5 +54,91 @@
   }
   .no-scrollbar {
     scrollbar-width: none;
+  }
+
+  .marquee-track {
+    animation: marquee 55s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .soft-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.25); }
+  }
+
+  .pixel-render {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .pixel-border {
+    box-shadow:
+      0 -4px 0 0 #7d2411,
+      0 4px 0 0 #7d2411,
+      -4px 0 0 0 #7d2411,
+      4px 0 0 0 #7d2411;
+  }
+
+  .pixel-border-cream {
+    box-shadow:
+      0 -3px 0 0 #f4ede3,
+      0 3px 0 0 #f4ede3,
+      -3px 0 0 0 #f4ede3,
+      3px 0 0 0 #f4ede3;
+  }
+
+  .pixel-shadow {
+    box-shadow: 4px 4px 0 0 #7d2411;
+  }
+
+  .pixel-shadow-cream {
+    box-shadow: 4px 4px 0 0 #f4ede3;
+  }
+
+  .crt-scan {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(125, 36, 17, 0.04) 0px,
+      rgba(125, 36, 17, 0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  .drag-grab {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16' shape-rendering='crispEdges'><g fill='%237d2411'><rect x='4' y='2' width='2' height='1'/><rect x='7' y='2' width='2' height='1'/><rect x='10' y='2' width='2' height='1'/><rect x='3' y='3' width='1' height='6'/><rect x='6' y='3' width='1' height='1'/><rect x='9' y='3' width='1' height='1'/><rect x='12' y='3' width='1' height='6'/><rect x='4' y='9' width='1' height='4'/><rect x='11' y='9' width='1' height='4'/><rect x='5' y='13' width='6' height='1'/></g><g fill='%23ffffff'><rect x='4' y='3' width='2' height='10'/><rect x='6' y='4' width='6' height='9'/></g></svg>") 8 8, grab;
+  }
+
+  .drag-grabbing {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16' shape-rendering='crispEdges'><g fill='%237d2411'><rect x='3' y='5' width='10' height='1'/><rect x='3' y='6' width='1' height='7'/><rect x='12' y='6' width='1' height='7'/><rect x='4' y='13' width='8' height='1'/></g><g fill='%23ffffff'><rect x='4' y='6' width='8' height='7'/></g></svg>") 8 8, grabbing;
+  }
+
+  .glow-ember {
+    filter: drop-shadow(0 0 24px rgba(217, 113, 54, 0.55))
+            drop-shadow(0 0 12px rgba(196, 114, 77, 0.45));
+  }
+
+  .text-glow {
+    text-shadow: 0 0 12px rgba(244, 237, 227, 0.6);
   }
 }
